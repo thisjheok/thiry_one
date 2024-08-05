@@ -279,7 +279,7 @@ const SellerHome = () => {
                             <BtnTitle>판매 통계</BtnTitle>
                             <BtnDescription>대시보드 확인하기</BtnDescription>
                         </BtnText>
-                        <Icon src="../src/assets/graph.svg" alt="Sales Stats" />
+                        <Icon src="../assets/graph.svg" alt="Sales Stats" />
                     </BtnContent>
                 </Btn>
             </BtnBox>
