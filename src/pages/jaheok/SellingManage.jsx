@@ -143,7 +143,7 @@ const SellingManage = () => {
         // 데이터를 가져오는 함수
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://13.125.100.193/store/1/product/list');
+                const response = await axios.get('https://thirtyone.kro.kr/store/1/product/list');
                 const data = response.data;
                 setProducts(data.products);
                 setStoreName(data.store_name);
@@ -167,7 +167,7 @@ const SellingManage = () => {
                 <ProductList>
                     {products.map((product, index) => (
                         <ProductItem key={index}>
-                            <ProductImage src={`http://13.125.100.193/media/${product.photo}`} alt="product" />
+                            <ProductImage src={`https://thirtyone.kro.kr/media/${product.photo}`} alt="product" />
                             <ProductInfo>
                                 <ProductName>{product.name}</ProductName>
                                 <ProductPrice>{product.price}원</ProductPrice>
