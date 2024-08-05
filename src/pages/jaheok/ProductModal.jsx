@@ -50,7 +50,7 @@ function ProductModal({ product, onClose, onPick, buyerId }) { // buyerId 전달
     console.log(`떨이 PICK clicked for product: ${product.name}, ${product.id} quantity: ${quantity}`);
     console.log(buyerId);
     try {
-      const response = await axios.post('http://13.125.100.193/buyer/pick', {
+      const response = await axios.post('https://thirtyone.kro.kr/buyer/pick', {
         buyer: buyerId, // buyerId.buyerId 사용
         sale_product: product.id,
         amount: quantity,
