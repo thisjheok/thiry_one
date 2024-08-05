@@ -261,7 +261,7 @@ const SellerHome = () => {
                             <BtnTitle>상품관리</BtnTitle>
                             <BtnDescription>내가 올린 상품 관리하기</BtnDescription>
                         </BtnText>
-                        <Icon src="../src/assets/apple.svg" alt="Manage Product" />
+                        <Icon src="../assets/apple.svg" alt="Manage Product" />
                     </BtnContent>
                 </Btn>
                 <Btn onClick={() => navigate('/sellinghistory')}>
@@ -270,7 +270,7 @@ const SellerHome = () => {
                             <BtnTitle>판매내역</BtnTitle>
                             <BtnDescription>판매 내역 한번에 보기</BtnDescription>
                         </BtnText>
-                        <Icon src="../src/assets/receipt.svg" alt="Sales History" />
+                        <Icon src="/assets/receipt.svg" alt="Sales History" />
                     </BtnContent>
                 </Btn>
                 <Btn onClick={() => navigate('/dashboard')}>
