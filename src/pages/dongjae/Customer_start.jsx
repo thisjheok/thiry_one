@@ -94,7 +94,7 @@ const Customer_start = () => {
 
   const handle_submit = async () => {
     try {
-      const response = await axios.post("http://13.125.100.193/buyer/create", {
+      const response = await axios.post("https://thirtyone.kro.kr/buyer/create", {
         name,
       });
       //   localStorage.setItem("temp_tokken",res.data.temp_access_token)
