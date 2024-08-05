@@ -61,7 +61,7 @@ const UserHome = () => {
     const fetchData = async () => {
         try {
             const requests = categories.map(category =>
-                axios.get(`http://13.125.100.193/buyer/category/${category}/list`)
+                axios.get(`https://thirtyone.kro.kr/buyer/category/${category}/list`)
             );
 
             const responses = await Promise.all(requests);
@@ -90,7 +90,7 @@ const UserHome = () => {
   const toggleModal = (item) => {
     if (item) {
       axios
-        .get(`http://13.125.100.193/buyer/product/${item.id}`) // 여기 id는 상품의 id
+        .get(`https://thirtyone.kro.kr/buyer/product/${item.id}`) // 여기 id는 상품의 id
         .then((response) => {
           const itemData = response.data; // 수량 받아올 변수
           setSelectedItem(response.data); // 선택된 아이템에 맞는 데이터 가져오기
