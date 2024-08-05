@@ -252,7 +252,7 @@ const SellerHome = () => {
                             <BtnTitle>떨이하기</BtnTitle>
                             <BtnDescription>지금 떨이 시작하기</BtnDescription>
                         </BtnText>
-                        <Icon src="../src/assets/discount.svg" alt="Discount" />
+                        <Icon src="/assets/discount.svg" alt="Discount" />
                     </BtnContent>
                 </Btn>
                 <Btn onClick={() => navigate('/sellingmanage')}>
