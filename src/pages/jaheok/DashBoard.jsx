@@ -181,7 +181,7 @@ const DashBoard = () => {
   useEffect(() => {
     const fetchSumData = async () => {
         try {
-            const response = await axios.get('http://13.125.100.193/dashboard/summary/1');
+            const response = await axios.get('https://thirtyone.kro.kr/dashboard/summary/1');
             const data = response.data;
             setSummaryData(data);
         } catch (error) {
@@ -191,7 +191,7 @@ const DashBoard = () => {
 
     const fetchRankData = async () => {
       try {
-          const response = await axios.get('http://13.125.100.193/dashboard/rank/1');
+          const response = await axios.get('https://thirtyone.kro.kr/dashboard/rank/1');
           const data = response.data;
           const transformedData = data.map(item => ({
             name: item.name,
@@ -205,7 +205,7 @@ const DashBoard = () => {
 
     const fetchComment = async () => {
       try {
-        const response = await axios.get('http://13.125.100.193/dashboard/advice/1');
+        const response = await axios.get('https://thirtyone.kro.kr/dashboard/advice/1');
         const data = response.data;
         setComment(data);
       } catch (error) {
@@ -215,7 +215,7 @@ const DashBoard = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://13.125.100.193/buyer/store/1/list');
+        const response = await axios.get('https://thirtyone.kro.kr/buyer/store/1/list');
         const data = response.data;
         setProducts(data);
       } catch (error) {
@@ -234,7 +234,7 @@ const DashBoard = () => {
     const fetchTrendData = async () => {
       if (selectedProduct) {
         try {
-          const response = await axios.get(`http://13.125.100.193/dashboard/trend/1/${selectedProduct}`);
+          const response = await axios.get(`https://thirtyone.kro.kr/dashboard/trend/1/${selectedProduct}`);
           const data = response.data;
           const transformedData = data.map(item => ({
             name: item.date,
