@@ -172,7 +172,7 @@ const SellingHistory = () => {
 
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://13.125.100.193/store/1/purchase/list');
+                const response = await axios.get('https://thirtyone.kro.kr/store/1/purchase/list');
                 const data = response.data;
                 
                 const pendingOrders = data.products.filter(product => product.buy_step === 'RES' || product.buy_step === 'PIC');
@@ -207,7 +207,7 @@ const SellingHistory = () => {
 
     const handleActionClick = async (orderId, action) => {
         try {
-            const response = await axios.patch(`http://13.125.100.193/store/1/order/${orderId}/update-status`, {
+            const response = await axios.patch(`https://thirtyone.kro.kr/store/1/order/${orderId}/update-status`, {
                 buy_step: action
             });
             if (response.status === 200) {
