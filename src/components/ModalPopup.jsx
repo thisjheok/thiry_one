@@ -77,7 +77,7 @@ const ModalPopup = ({
       store: itemData.store.name,
     };
     axios
-      .post("http://13.125.100.193/buyer/pick", postData) // API_ENDPOINT를 실제 API URL로 대체 필요
+      .post("https://thirtyone.kro.kr/buyer/pick", postData) // API_ENDPOINT를 실제 API URL로 대체 필요
       .then((response) => {
         console.log("주문 성공:", response.data);
         onPickSuccess(); // 부모 컴포넌트인 ItemPage의 onPickSuccess 함수 호출하여 상태 업데이트
