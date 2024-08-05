@@ -50,7 +50,7 @@ const Customer_log = () => {
 
       try {
         const response = await axios.get(
-          `http://13.125.100.193/buyer/purchase/${buyerId}/list`
+          `https://thirtyone.kro.kr/buyer/purchase/${buyerId}/list`
         );
 
         // `buyer` 값과 `buyerId`가 일치하는 데이터만 필터링
@@ -72,7 +72,7 @@ const Customer_log = () => {
     try {
       // await axios.patch(`http://13.125.100.193/buyer/purchase/${buyerId}/cancel/${id}`);
       await axios.patch(
-        `http://13.125.100.193/buyer/purchase/${buyerId}/cancel/${orderId}`
+        `https://thirtyone.kro.kr/buyer/purchase/${buyerId}/cancel/${orderId}`
       );
       setLogs(logs.filter((log) => log.id !== orderId)); // 삭제 후 로그 목록에서 해당 주문 제거
       console.log("상태 변경 완료");
