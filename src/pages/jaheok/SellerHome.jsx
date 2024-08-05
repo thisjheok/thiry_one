@@ -4,14 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Background = styled.div`
-    width: 376px;
-    height: 812px;
+    width: 100%;
+    min-height: 100vh;
     background-color: #f9f8f8;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
 `;
-
 
 const InfoBox = styled.div`
     position: relative;
@@ -32,17 +31,13 @@ const Image = styled.img`
 
 const InfoItem = styled.div`
     margin: 5px 0;
+    font-size: 14px;
 `;
 
-const InfoName = styled.div`
-    
-`
-
 const BtnBox = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
 `;
 
 const Btn = styled.button`
@@ -51,7 +46,6 @@ const Btn = styled.button`
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    width: calc(50% - 10px); 
     height: 120px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -89,13 +83,13 @@ const BtnTitle = styled.div`
 `;
 
 const BtnDescription = styled.div`
-    font-size: 14px;
+    font-size: 12px;
     color: #888888;
 `;
 
 const Icon = styled.img`
-    width: 54px;
-    height: 54px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -113,20 +107,20 @@ const RankBox = styled.div`
 `;
 
 const RankTitle = styled.div`
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 10px;
 `;
 
 const RankAmount = styled.div`
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #d94844;
     margin-bottom: 10px;
 `;
 
 const RankGrade = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     color: #888888;
 `;
 
@@ -139,15 +133,15 @@ const Logo = styled.img`
 const Title = styled.div`
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     color: #d94844;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 `;
 
 const IntroText = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     color: #555555;
     margin-bottom: 20px;
 `;
