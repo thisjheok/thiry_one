@@ -103,7 +103,7 @@ const ItemPage = () => {
   // 카테고리에 해당하는 아이템 리스트를 가져오는 부분
   useEffect(() => {
     axios
-      .get(`http://13.125.100.193/buyer/category/${category}/list`)
+      .get(`https://thirtyone.kro.kr/buyer/category/${category}/list`)
       .then((response) => {
         // 카테고리와 product_type이 일치하는 데이터 필터링
         console.log("연결 데이터 확인:", response.data);
@@ -125,7 +125,7 @@ const ItemPage = () => {
   const toggleModal = (item) => {
     if (item) {
       axios
-        .get(`http://13.125.100.193/buyer/product/${item.id}`) //여기 id는 상품의 id
+        .get(`https://thirtyone.kro.kr/buyer/product/${item.id}`) //여기 id는 상품의 id
         .then((response) => {
           const itemData = response.data; // 수량 받아올 변수
           setSelectedItem(response.data); // 선택된 아이템에 맞는 데이터 가져오기
