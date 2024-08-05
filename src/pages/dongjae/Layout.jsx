@@ -1,24 +1,29 @@
 import React from "react";
-import styled from "styled-components";
 import { Outlet } from "react-router-dom";
+import { styled } from "styled-components";
 
-const Layout_wrapper = styled.div`
-    width:376px;
-    height:812px;
-    display:flex;
-    flex-direction:column;
-    border:1px solid white;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    background-color:white;
-`
+const LayoutWrapper = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+`;
 
 const Layout = () => {
   return (
-    <Layout_wrapper>
+    <LayoutWrapper>
       <Outlet />
-    </Layout_wrapper>
+    </LayoutWrapper>
   );
 };
 
