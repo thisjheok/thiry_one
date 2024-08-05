@@ -146,7 +146,7 @@ const ProductRegistration = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "http://13.125.100.193/store/create/1/product",
+        "https://thirtyone.kro.kr/store/create/1/product",
         formData
       );
       console.log("Product registered successfully:", response.data);
