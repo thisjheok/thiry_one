@@ -1,0 +1,52 @@
+.userhome {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  height: 300px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0px;
+}
+
+header {
+  flex: 0 0 auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  flex: 0 0 auto;
+  width: 100%;
+  z-index: 1000; /* Ensure footer is above other content */
+}
+
+.store {
+  color: #d94844;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: flex-end;
+  margin: 13px;
+}
+
+.storecontainer {
+  height: 1600px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  gap: 10px;
+  padding: 10px;
+  padding-bottom: 80px; /* Adjust this value based on footer height */
+  background-color: #ffffff;
+}
