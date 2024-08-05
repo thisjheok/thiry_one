@@ -173,7 +173,7 @@ const SellerHome = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://13.125.100.193/store/home/', {
+                const response = await axios.get('https://thirtyone.kro.kr/store/home/', {
                     withCredentials: true
                 });
                 const item = {
@@ -189,7 +189,7 @@ const SellerHome = () => {
         };
         const fetchSumData = async () => {
             try {
-                const response = await axios.get('http://13.125.100.193/dashboard/summary/1');
+                const response = await axios.get('https://thirtyone.kro.kr/dashboard/summary/1');
                 const data = response.data;
                 setSummaryData(data);
             } catch (error) {
