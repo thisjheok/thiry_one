@@ -18,7 +18,7 @@ function Map() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://13.125.100.193/store/list');
+        const response = await axios.get('https://thirtyone.kro.kr/store/list');
         const data = response.data.map(store => ({
           lat: store.latitude,
           lng: store.longitude,
