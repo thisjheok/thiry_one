@@ -36,29 +36,25 @@ const InfoItem = styled.div`
 
 const BtnBox = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 0;
 `;
 
 const Btn = styled.button`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
-    justify-content: center;
-    position: relative;
     height: 120px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border: none;
+    border-radius: 12px;
     background-color: #ffffff;
     font-size: 14px;
     cursor: pointer;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 16px;
     box-sizing: border-box;
-
-    &:active {
-        background-color: #e0e0e0;
-    }
 `;
 
 const BtnContent = styled.div`
@@ -73,26 +69,25 @@ const BtnContent = styled.div`
 const BtnText = styled.div`
     display: flex;
     flex-direction: column;
-    text-align: left
+    text-align: left;
 `;
 
 const BtnTitle = styled.div`
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    color: #333;
 `;
 
 const BtnDescription = styled.div`
-    font-size: 12px;
-    color: #888888;
+    font-size: 14px;
+    color: #666;
 `;
 
 const Icon = styled.img`
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    width: 32px;
+    height: 32px;
+    align-self: flex-end;
 `;
 
 const RankBox = styled.div`
@@ -146,15 +141,22 @@ const IntroText = styled.div`
     margin-bottom: 20px;
 `;
 
+const Copyright = styled.div`
+    margin-top: 20px;
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+`;
+
 const SellerHome = () => {
     const [store, setStore] = useState({});
     const navigate = useNavigate();
     const [summaryData, setSummaryData] = useState({});
     const [sellerRank, setSellerRank] = useState('');
-    const [nextRank,setNextRank] = useState('');
-    const [differIncome,setDiffer] = useState(0)
-    const [RankColor,setRankColor] = useState('');
-    const [NextRankColor,setNextRankColor] = useState('');
+    const [nextRank, setNextRank] = useState('');
+    const [differIncome, setDiffer] = useState(0);
+    const [RankColor, setRankColor] = useState('');
+    const [NextRankColor, setNextRankColor] = useState('');
     const typeMapping = {
         'BAK': '빵 & 간식류',
         'BUT': '정육 제품',
@@ -174,7 +176,7 @@ const SellerHome = () => {
                     ...response.data,
                     type: typeMapping[response.data.type] || response.data.type,
                 };
-                item.open_time= item.open_time.slice(0, -3);
+                item.open_time = item.open_time.slice(0, -3);
                 item.close_time = item.close_time.slice(0, -3);
                 setStore(item);
             } catch (error) {
@@ -201,25 +203,25 @@ const SellerHome = () => {
         } else if (summaryData.month_sales_income > 950000) {
             setSellerRank('플레티넘');
             setNextRank('다이아');
-            setDiffer(1200000-summaryData.month_sales_income);
+            setDiffer(1200000 - summaryData.month_sales_income);
             setRankColor('56f0d1');
             setNextRankColor('3a86f0');
         } else if (summaryData.month_sales_income > 650000) {
             setSellerRank('골드');
             setNextRank('플레티넘');
-            setDiffer(950000-summaryData.month_sales_income);
+            setDiffer(950000 - summaryData.month_sales_income);
             setRankColor('f5da54');
             setNextRankColor('56f0d1');
         } else if (summaryData.month_sales_income > 350000) {
             setSellerRank('실버');
             setNextRank('골드');
-            setDiffer(650000-summaryData.month_sales_income);
+            setDiffer(650000 - summaryData.month_sales_income);
             setRankColor('4f4f4f');
             setNextRankColor('f5da54');
         } else {
             setSellerRank('브론즈');
             setNextRank('실버');
-            setDiffer(350000-summaryData.month_sales_income);
+            setDiffer(350000 - summaryData.month_sales_income);
             setRankColor('765a22');
             setNextRankColor('4f4f4f');
         }
@@ -283,10 +285,9 @@ const SellerHome = () => {
                 <RankGrade><span style={{color:`#${RankColor}`}}>{sellerRank}</span> 등급이에요</RankGrade>
                 <RankGrade><span style={{color:`#${NextRankColor}`}}>{nextRank}</span> 등급 까지 {differIncome}원 남았어요!</RankGrade>
             </RankBox>
-
-            <div style={{ marginLeft: "10px", marginTop: "20px", fontSize: "14px", color: "gray" }}>
+            <Copyright>
                 Copyright CarrotCake in Inha Univ, All Right Reserved.
-            </div>
+            </Copyright>
         </Background>
     );
 };
