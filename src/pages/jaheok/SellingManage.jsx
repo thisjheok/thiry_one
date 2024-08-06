@@ -43,14 +43,14 @@ const BackIcon = styled.img`
 const Content = styled.div`
     width: 100%;
     max-width: 376px;
-    height: 100%;
-    padding: 80px 20px 20px 20px; /* 헤더 높이만큼 위쪽 패딩 추가 */
+    height: calc(100% - 60px); // 헤더 높이만큼 뺌
+    padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* 스크롤바가 상품 목록에만 생기도록 설정 */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 60px; // 헤더 높이만큼 마진 추가
 `;
 
 const ProductList = styled.div`
@@ -111,15 +111,15 @@ const StockCount = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-  display: flex;
+ display: flex;
   align-items: center;
   justify-content: center;
-  width: 376px;
+  width: 100%;
+  max-width: 376px;
   height: 60px;
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1000;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
