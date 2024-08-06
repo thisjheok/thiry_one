@@ -27,8 +27,8 @@ const GridItem = styled(Link)`
 
 const Icon = styled.img`
   width: 65px; /* 아이콘 크기 */
-  height: 55px; /* 아이콘 크기 */
-  margin-bottom: 8px; /* 아이콘과 텍스트 간의 간격 */
+  height: 48px; /* 아이콘 크기 */
+  margin-bottom: 4px; /* 아이콘과 텍스트 간의 간격 */
   border: 1px solid #d0d0d0;
   border-radius: 30px;
   padding: 8px;
