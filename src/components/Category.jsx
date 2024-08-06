@@ -12,7 +12,7 @@ const GridContainer = styled.div`
   align-items: center;
   /* min-height: 330px; 최소 높이 설정 */
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
   background-color: #ffffff;
 `;
 
