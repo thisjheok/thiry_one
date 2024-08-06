@@ -300,7 +300,7 @@ const DashBoard = () => {
             </PieChart>
           </ResponsiveContainer>
         </PieBox>
-        <BarBox>
+               <BarBox>
           <ChartTitleContainer>
             <ChartTitle>주간 품목별 떨이 판매 추이</ChartTitle>
             <ComboBox value={selectedOption} onChange={handleOptionChange}>
@@ -318,7 +318,7 @@ const DashBoard = () => {
               height={300}
               data={trendData}
               margin={{
-                top: 20,
+                top: 5,
                 right: 30,
                 left: 20,
                 bottom: 5,
@@ -327,10 +327,18 @@ const DashBoard = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
-              <BarTooltip />
-              <BarLegend verticalAlign="top" height={36} />
-              <Bar dataKey="판매된떨이" stackId="a" fill="#d74545" />
-              <Bar dataKey="등록된떨이" stackId="a" fill="#939090" />
+              <Tooltip />
+              <Legend />
+              <Bar 
+                dataKey="판매된떨이" 
+                fill="#d74545" 
+                activeBar={<Rectangle fill="pink" stroke="red" />} 
+              />
+              <Bar 
+                dataKey="등록된떨이" 
+                fill="#939090" 
+                activeBar={<Rectangle fill="lightgray" stroke="gray" />} 
+              />
             </BarChart>
           </ResponsiveContainer>
         </BarBox>
