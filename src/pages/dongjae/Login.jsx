@@ -98,7 +98,7 @@ const Login = () => {
                 <Text1 src="assets/logo_text.svg" />
                 <Text2 src="assets/main_text.svg"/>
                 <WhiteLogo src="assets/white_logo.svg"/>
-                <Sellerbutton onClick={() => navigate("/subscribe")}>
+                <Sellerbutton onClick={() => navigate("/sellerhome")}>
                     <ButtonText>판매자로 시작하기</ButtonText>
                 </Sellerbutton>
                 <Customerbutton onClick={() => navigate("/customer_start")}>

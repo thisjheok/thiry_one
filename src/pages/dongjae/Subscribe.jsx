@@ -83,7 +83,7 @@ const Subscribe = () => {
             <Back_arrow></Back_arrow>
             <Header_text text="구독하기"></Header_text>
             <Text1 src="assets/main_text_red.svg" />
-            <Text2 src="assets/subscribe_text.svg"/>
+            <Text2 src="assets/subTitle.svg"/>
             <WhiteLogo src="assets/logo_red.png"/>
             <Sub_button onClick={() => navigate("/sellerhome")}>
                 <ButtnonImg src="assets/subscribe_button.svg"/>
