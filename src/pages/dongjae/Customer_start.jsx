@@ -1,86 +1,92 @@
-import Layout from "../../pages/dongjae/Layout";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Back_arrow from "../../components/dongjae/Back_arrow";
 
-const WhiteLogo = styled.img`
-  position: absolute;
-  width: 76px;
-  height: 80px;
-  left: 210px;
-  top: 206px;
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
 `;
 
-const Text1 = styled.img`
-  position: absolute;
-  width: 319px;
-  height: 142px;
-  left: calc(50% - 319px / 2 - 0.5px);
-  top: 210px;
-  font-family: "Open Sans";
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+`;
+
+const WhiteLogo = styled.img`
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+`;
+
+const Text1 = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
-  line-height: 87px;
-  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.2;
+  color: #D94844;
+  text-align: center;
 `;
 
 const Text2 = styled.div`
-  position: absolute;
-  width: 94px;
-  height: 22px;
-  left: 21px;
-  top: 581px;
-  font-family: "Open Sans";
+  font-family: "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #D94844;
+  text-align: center;
+  margin-top: 10px;
+`;
+
+const InputLabel = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
   color: #000000;
+  align-self: flex-start;
+  margin-left: 10%;
+  margin-top: 40px;
 `;
 
 const NameInput = styled.input`
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 8px 107px 8px 8px;
-  gap: 10px;
-  position: absolute;
-  width: 336px;
+  width: 80%;
   height: 52px;
-  left: 21px;
-  top: 611px;
-  background: #ffffff;
-  border: 1px solid #b3b3b3;
+  padding: 8px;
+  background: #FFFFFF;
+  border: 1px solid #B3B3B3;
   border-radius: 10px;
+  margin-top: 10px;
+  font-size: 16px;
 `;
 
 const StartButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 60px;
-  gap: 10px;
-  position: absolute;
-  width: 336px;
+  width: 80%;
   height: 56px;
-  left: calc(50% - 336px / 2);
-  top: 708px;
-  border: none;
-  background: ${(props) =>
-    props.disabled ? "rgba(217, 72, 68, 0.44)" : "#D94844"};
+  background: ${(props) => (props.disabled ? "rgba(217, 72, 68, 0.44)" : "#D94844")};
   border-radius: 15px;
-  font-family: "Open Sans";
+  border: none;
+  font-family: "Noto Sans KR", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
-  color: #ffffff;
-  cursor: pointer;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 40px;
+  cursor: ${(props) => (props.disabled ? "default" : "pointer")};
 `;
 
 const Customer_start = () => {
@@ -94,14 +100,9 @@ const Customer_start = () => {
 
   const handle_submit = async () => {
     try {
-      const response = await axios.post("https://thirtyone.kro.kr/buyer/create", {
-        name,
-      });
-      //   localStorage.setItem("temp_tokken",res.data.temp_access_token)
+      const response = await axios.post("https://thirtyone.kro.kr/buyer/create", { name });
       const id = response.data.id;
-      //localStorage.setItem("buyerId", id);
-      //navigate("/userhome");
-      navigate(`/userhome/${id}`); // useParams로 userHome에 구매자 id 넘기기
+      navigate(`/userhome/${id}`);
       console.log("Sign up complete, buyer ID:", id);
     } catch (error) {
       console.error("데이터 전송 중 오류가 발생했습니다:", error);
@@ -109,11 +110,14 @@ const Customer_start = () => {
   };
 
   return (
-    <>
+    <Container>
       <Back_arrow />
-      <Text1 src="assets/main_text_red.svg" />
-      <WhiteLogo src="assets/logo_red.png" />
-      <Text2>이름</Text2>
+      <LogoContainer>
+        <WhiteLogo src="assets/logo_red.png" />
+        <Text1>떠리원</Text1>
+        <Text2>떨이를 원하다</Text2>
+      </LogoContainer>
+      <InputLabel>이름</InputLabel>
       <NameInput
         type="text"
         placeholder="이름을 입력해 주세요."
@@ -122,7 +126,7 @@ const Customer_start = () => {
       <StartButton onClick={handle_submit} disabled={is_next_disabled}>
         시작하기
       </StartButton>
-    </>
+    </Container>
   );
 };
 
