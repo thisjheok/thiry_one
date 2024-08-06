@@ -126,12 +126,11 @@ const ComboBox = styled.select`
 const CommentBox = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 90px;
   width: 80%;
   padding: 20px;
   background-color: #fcfcfc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom:40px;
 `;
 
 const CommentText = styled.p`
