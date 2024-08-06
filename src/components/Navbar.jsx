@@ -6,11 +6,14 @@ const Container = styled.div`
   display: flex;
   border-top: 1px solid #e0e0e0;
   height: 68px;
-  padding: 8px;
+  padding: 8px 0; // 좌우 패딩 제거
   position: fixed;
   bottom: 0;
+  left: 0; // 왼쪽 정렬 확실히
+  right: 0; // 오른쪽 끝까지 확장
   width: 100%;
-  justify-content: center; /* 중앙 정렬 */
+  max-width: 100%; // 최대 너비 제한
+  justify-content: space-around; // 아이템 간 간격 균등 분배
   box-sizing: border-box;
   align-items: center;
   background-color: white;
@@ -18,9 +21,9 @@ const Container = styled.div`
 const Atag = styled(Link)`
   text-decoration: none;
   text-align: center;
-  padding: 14px 20px;
-  width: 100%;
-  cursor: pointer; /* 클릭 가능 표시 */
+  padding: 14px 0; // 좌우 패딩 제거
+  flex: 1; // 균등한 너비 분배
+  cursor: pointer;
 `;
 const Icon = styled.img`
   width: 24px;
