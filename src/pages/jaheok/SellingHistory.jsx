@@ -261,7 +261,7 @@ const SellingHistory = () => {
                                     <OrderText>{order.order_number}</OrderText>
                                     <OrderText>{order.buyer_name}</OrderText>
                                 </OrderInfo>
-                                <div style={{ flexGrow: 1, marginLeft: '48px' }}>
+                                <div style={{ flexGrow: 1, marginLeft: '40px' }}>
                                     {order.buy_step === 'PIC' && <StatusText>픽업대기중</StatusText>}
                                     <OrderText>{order.sale_product_name} {order.amount}개</OrderText>
                                 </div>
