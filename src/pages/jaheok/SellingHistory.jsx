@@ -34,7 +34,6 @@ const HeaderContainer = styled.div`
     box-sizing: border-box;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -75,14 +74,14 @@ const TabButton = styled.button`
 const Content = styled.div`
     width: 100%;
     max-width: 376px;
-    height: 100%;
+    height: calc(100% - 60px); // 헤더 높이만큼 뺌
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* TabContainer와의 간격을 위해 추가 */
+    margin-top: 60px; // 헤더 높이만큼 마진 추가
 `;
 
 const OrderList = styled.div`
@@ -261,7 +260,7 @@ const SellingHistory = () => {
                                     <OrderText>{order.order_number}</OrderText>
                                     <OrderText>{order.buyer_name}</OrderText>
                                 </OrderInfo>
-                                <div style={{ flexGrow: 1, marginLeft: '40px' }}>
+                                <div style={{ flexGrow: 1, marginLeft: '48px' }}>
                                     {order.buy_step === 'PIC' && <StatusText>픽업대기중</StatusText>}
                                     <OrderText>{order.sale_product_name} {order.amount}개</OrderText>
                                 </div>
