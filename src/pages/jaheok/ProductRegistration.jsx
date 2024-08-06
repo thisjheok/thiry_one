@@ -106,7 +106,6 @@ const HeaderContainer = styled.div`
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1000;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
