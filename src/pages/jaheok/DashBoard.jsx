@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as BarTooltip, Legend as BarLegend } from 'recharts';
+import { BarChart, Rectangle,Bar, XAxis, YAxis, CartesianGrid, Tooltip as BarTooltip, Legend as BarLegend } from 'recharts';
 import axios from 'axios';
 
 const COLORS = ['#fdb5b5', '#ffd787', '#9ac7fe', '#c79afe','#9dda77'];
@@ -239,7 +239,7 @@ const DashBoard = () => {
           const transformedData = data.map(item => ({
             name: item.date,
             판매된떨이: item.selled_amount,
-            등록된떨이: item.remove_total,
+            등록된떨이: item.amount,
             amt: item.amount
           }));
           setTrendData(transformedData);
